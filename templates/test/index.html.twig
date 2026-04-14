@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    User Dashboard
+{% endblock %}
+
+{% block body %}
+    <h1>User Dashboard</h1>
+
+    {% for user in users %}
+        {% if user.age > 18 %}
+            <div>
+                <h2>{{ user.name|upper }}</h2>
+                <p>Age: {{ user.age }}</p>
+                <p>Skills: {{ user.skills|join(', ') }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
